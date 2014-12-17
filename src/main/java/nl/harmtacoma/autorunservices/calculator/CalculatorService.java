@@ -23,11 +23,11 @@ public class CalculatorService {
     }
 
     @GET
-    public Response calculate(@QueryParam("nmb1") int nmbOne, @QueryParam("nmb2") int nmbTwo, @QueryParam("mode") String mode) {
+    public Response calculate(@QueryParam("nmb1") float nmbOne, @QueryParam("nmb2") float nmbTwo, @QueryParam("mode") String mode) {
         try {
             IModificationType calculator = ModeFactory.getModifier(mode);
             Result result = calculator.calculate(nmbOne, nmbTwo);
-            return Response.ok(result.getStringresult()).build();
+            return Response.ok(result).build();
         } catch (NullPointerException e) {
             return Response.status(404).entity(e.getMessage()).build();
         } catch (IllegalArgumentException e) {

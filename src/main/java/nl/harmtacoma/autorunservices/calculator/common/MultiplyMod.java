@@ -12,13 +12,13 @@ public class MultiplyMod implements IModificationType {
     }
 
     @Override
-    public Result calculate(int valueOne, int valueTwo) {
+    public Result calculate(float valueOne, float valueTwo) {
         float answer = multiply(valueOne,valueTwo);
-        String stringresult = "Multiplying "+valueOne+" and "+valueTwo+" gave "+answer;
-        return new Result(valueOne,valueTwo,answer,getTypeName(),stringresult);
+        String result = "Multiplying "+valueOne+" and "+valueTwo+" gave "+answer;
+        return new Result(valueOne,valueTwo,answer,getTypeName(),result);
     }
 
-    private float multiply(int one, int two) {
+    private float multiply(float one, float two) {
         return one*two;
     }
 }

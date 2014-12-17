@@ -6,5 +6,5 @@ package nl.harmtacoma.autorunservices.calculator.common;
 public interface IModificationType {
     public String getTypeName();
 
-    public Result calculate(int valueOne, int valueTwo);
+    public Result calculate(float valueOne, float valueTwo);
 }
